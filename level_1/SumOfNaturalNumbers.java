@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class SumOfNaturalNumbers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Input the value of n
         System.out.print("Enter a natural number: ");
         int n = scanner.nextInt();
 
@@ -24,12 +22,8 @@ public class SumOfNaturalNumbers {
             loopSum += i;
             i++;
         }
-
-        // Print results
         System.out.println("Sum using formula: " + formulaSum);
         System.out.println("Sum using while loop: " + loopSum);
-
-        // Compare results
         if (formulaSum == loopSum) {
             System.out.println("Both computations match and are correct!");
         } else {

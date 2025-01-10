@@ -2,8 +2,6 @@ import java.util.Scanner;
 public class GreatestFactor {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Input the number
         System.out.print("Enter a number to find its greatest factor besides itself: ");
         int number = scanner.nextInt();
         int greatestFactor = 1;
