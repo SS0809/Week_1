@@ -25,13 +25,13 @@ public class EmployeeBonus{
 		for (int i=0; i<10 ;i++ ) {
 		//Zara decides to give a bonus of 5% to employees whose year of service is more than 5 years or 2% if less than 5 years
 			if(salary[i][1]>=5){
-				newSalary[i][1] =  ((0.02) * salary[i][0]);
+				newSalary[i][1] =  ((0.05) * salary[i][0]);
 				totalBonus+=newSalary[i][1];
 				newSalary[i][0] = salary[i][0] + newSalary[i][1];
 				totalNewSalary+=newSalary[i][0];
 				totalSalary+=salary[i][0];
 			}else{
-				newSalary[i][1] =  ((0.05) * salary[i][0]);
+				newSalary[i][1] =  ((0.02) * salary[i][0]);
 				totalBonus+=newSalary[i][1];
 				newSalary[i][0] = salary[i][0] + newSalary[i][1];
 				totalNewSalary+=newSalary[i][0];
