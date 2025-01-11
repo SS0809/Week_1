@@ -35,7 +35,7 @@ public class LargestElementModified{
 		//Define variable to store largest and second largest digit and initialize it to zero
 		int largestElement = 0 , secondLargest = 0;
 		//Loop through the array and use conditional statements to find the largest and second largest number in the array
-		for (int i : digits ) {
+		for (int i =0 ; i < digits.length ;i++ ) {
 			if(digits[i]>largestElement){
 				largestElement=digits[i];
 			}
