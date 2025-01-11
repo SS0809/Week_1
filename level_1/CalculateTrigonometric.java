@@ -6,7 +6,7 @@ public double[] calculateTrigonometricFunctions(double angle)
 */
 import java.util.Scanner;
 public class CalculateTrigonometric{
-	public static double[] calculateTrigonometricFunctions(double angle){
+	public double[] calculateTrigonometricFunctions(double angle){
 		double[] arr = new double[4];
 		// Firstly convert to radians and then use Math function to find sine, cosine and tangent.
 		arr[0] = Math.toRadians(angle);
@@ -18,6 +18,7 @@ public class CalculateTrigonometric{
 	public static void main(String[] args){
 		Scanner scanner = new Scanner(System.in);
 		double angle = scanner.nextDouble();
-		System.out.println("Radians are "+ calculateTrigonometricFunctions(angle)[0]+", Sin = "+calculateTrigonometricFunctions(angle)[1]+", Cos= "+calculateTrigonometricFunctions(angle)[2]+", Tan= "+calculateTrigonometricFunctions(angle)[3]);
+		CalculateTrigonometric obj = new CalculateTrigonometric();
+		System.out.println("Radians are "+ obj.calculateTrigonometricFunctions(angle)[0]+", Sin = "+obj.calculateTrigonometricFunctions(angle)[1]+", Cos= "+obj.calculateTrigonometricFunctions(angle)[2]+", Tan= "+obj.calculateTrigonometricFunctions(angle)[3]);
 	}
 }
