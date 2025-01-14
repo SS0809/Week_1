@@ -48,7 +48,7 @@ public class TextProcessor {
             if (ch != ' ') {
                 currentWord += ch;
             } else {
-                words[wordIndex++] = currentWord.toString();
+                words[wordIndex++] = currentWord();
                 currentWord = "";
             }
         }
