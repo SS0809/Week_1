@@ -1,18 +1,14 @@
 /*
-		//Write a method using the String built-in charAt() method to convert each character 
-		//if it is lowercase to the Upper Case. Use the logic ASCII value of 'a' is 97 and 'A' is 65 
-		//so the difference is 32, similarly ASCII value of 'b' is 98 and 'B' is 66 so the difference is 32, and so on
-		
-		Hint => 
+Write a program to split the text into words and find the shortest and longest strings in a given text
+Hint => 
 Take user input using the Scanner nextLine() method 
-Create a Method to split the text into words using the charAt() method without using the String built-in split() method and return the words.
-Create a method to to find and return the length of a string without using the length() method. 
-Create a method to take the word array and return 2D String array of the word and its corresponding length. Use String built-in function String.valueOf() to generate the String value for the number
-The main function calls the user-defined method and display the result in a tabular format. During display make sure to convert the length value from String to Integer and then display
+Create a method to take the word array and return a 2D String array of the word and its corresponding length. Use String built-in function String.valueOf() to generate the String value for the number
+Create a Method that takes the 2D array of word and corresponding length as parameters, find the shortest and longest string and return them in an 1D int array. 
+The main function calls the user-defined methods and displays the result. 
 */
-import java.util.Scanner;
+import java.util.*;
 
-public class TextProcessor {
+public class SplitterShLo {
 
     // Method to find string length without using length()
     public static int findLength(String str) {
@@ -48,7 +44,7 @@ public class TextProcessor {
             if (ch != ' ') {
                 currentWord += ch;
             } else {
-                words[wordIndex++] = currentWord();
+                words[wordIndex++] = currentWord;
                 currentWord = "";
             }
         }
@@ -58,7 +54,20 @@ public class TextProcessor {
 
         return words;
     }
-
+    public static int[] shortestLongestArray(String[][] words){
+        int maxi = Integer.MIN_VALUE;
+        int mini = Integer.MAX_VALUE;
+        for (int i=0;i<words.length;i++) {
+            if(maxi < Integer.parseInt(words[i][1]))
+                maxi = Integer.parseInt(words[i][1]);
+            if(mini> Integer.parseInt(words[i][1]))
+                mini = Integer.parseInt(words[i][1]);
+        }
+        int[] arr = new int[2];
+        arr[0] = maxi;
+        arr[1] = mini;
+        return arr;
+    }
     // Method to create 2D array of words and their lengths
     public static String[][] createWordLengthArray(String[] words) {
         String[][] result = new String[words.length][2];
@@ -78,8 +87,10 @@ public class TextProcessor {
         // Split into words and process
         String[] words = splitIntoWords(input);
         String[][] wordLengthArray = createWordLengthArray(words);
+        int[] intt = shortestLongestArray(wordLengthArray);
         for (String[] wordData : wordLengthArray) {
             System.out.print( wordData[0] +" "+ Integer.parseInt(wordData[1])+ "\n");
         }
+        System.out.println("longest "+ intt[0]+ "\nshortest "+intt[1]);
     }
 }
